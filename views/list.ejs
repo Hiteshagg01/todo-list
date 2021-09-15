@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet"  href="css/style.css">
+
+    <title>To Do List</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <p>To-Do List</p>
+    </nav>
+
+    <header class="box" id="heading">
+        <h1> <%= DAY %> </h1>
+    </header>
+
+    <div class="box">
+        
+        <% if(NEWITEMS.length) { %>
+                <% for(var i=0; i<NEWITEMS.length; i++) { %>
+                    <% if(NEWITEMS[i].length) { %> 
+                        <div class="item">
+                            <input type="checkbox" class="checkbox">
+                            <p>
+                                <%= NEWITEMS[i] %>
+                            </p>
+                        </div> 
+                    <% } %> 
+                <% } %>
+        <% } %>
+    
+        <form class="item" action="/" method="post">
+            <input type="text" name="item" autocomplete="off" placeholder="Add Item">
+            <button type="submit" name="button">+</button>
+        </form>
+
+    </div>
+
+    <footer>
+        <br>
+        <p>copyright 2021 to-do list</p>
+        <br>
+    </footer>
+
+</body>
+
+</html>
